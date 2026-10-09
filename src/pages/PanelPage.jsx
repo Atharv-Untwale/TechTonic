@@ -1,7 +1,6 @@
 import { memo } from "react";
 import { PANEL, EVENT } from "@/config/eventConfig.js";
 import { PanelPeople } from "@/components/sections/Panel.jsx";
-import CyberText from "@/components/common/CyberText.jsx";
 import Button from "@/components/common/Button.jsx";
 
 export default memo(function PanelPage() {
@@ -11,9 +10,9 @@ export default memo(function PanelPage() {
         <Button ghost href="#top" className="back">
           ← Back to home
         </Button>
-        <h1>
-          <CyberText text="Panel Discussion" />
-        </h1>
+        <br />
+        <span className="sec-tag">✦ Deep-Dive Panel Session</span>
+        <h1>Panel Discussion</h1>
         <p className="meta">
           {PANEL.time} · {EVENT.dateLabel} · {EVENT.venue}
         </p>
@@ -24,7 +23,7 @@ export default memo(function PanelPage() {
           ))}
         </ul>
       </div>
-      <section className="sec">
+      <section className="sec" style={{ paddingTop: "1rem" }}>
         <PanelPeople />
         <div className="link-row">
           <Button>Register to attend</Button>
