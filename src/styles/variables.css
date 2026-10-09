@@ -1,0 +1,41 @@
+:root {
+  --ink: #14151a;
+  --ink2: #1d1f27;
+  --cream: #efe3c2;
+  --red: #e2542c;
+  --gold: #f0b92b;
+  --teal: #4e8f94;
+  --dim: #b9ad8d;
+
+  --disp: "Alfa Slab One", Impact, serif;
+  --script: "Caveat Brush", "Comic Sans MS", cursive;
+  --body: "DM Sans", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font: 400 1.05rem / 1.6 var(--body);
+  background-image: radial-gradient(rgba(239, 227, 194, 0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}

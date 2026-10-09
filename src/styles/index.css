@@ -1,0 +1,5 @@
+/* Production-grade modular CSS architecture for TechTonic */
+@import "./variables.css";
+@import "./components.css";
+@import "./effects.css";
+@import "./sections.css";

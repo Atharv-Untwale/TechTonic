@@ -1,10 +1,10 @@
-// ✏️ EDIT THIS FILE: everything on the site reads from here.
-export const REGISTER_URL = "https://forms.gle/REPLACE_WITH_YOUR_FORM"; // <- paste your registration form link
-export const OPEN_MIC_URL = ""; // optional separate Engineers Got Talent form; falls back to REGISTER_URL
+// ✏️ Central Event Configuration: all pages and components read from here.
+export const REGISTER_URL = "https://forms.gle/REPLACE_WITH_YOUR_FORM";
+export const OPEN_MIC_URL = ""; // Optional separate Engineers Got Talent form; falls back to REGISTER_URL
 
 export const EVENT = {
   name: "TechTonic",
-  start: "2026-10-31T09:30:00+05:30", // poster says 31 Oct 2026 (proposal says 24 Oct, confirm!)
+  start: "2026-10-31T09:30:00+05:30",
   dateLabel: "Saturday, 31 October 2026",
   time: "9:30 AM onwards (6 hours)",
   venue: "Major Auditorium, Medicaps University, Indore",
@@ -18,19 +18,34 @@ export const SEGMENTS = [
 ];
 
 export const SCHEDULE = [
-  { group: "Inauguration", items: [
-    ["09:30", "Welcome & Opening"], ["09:35", "Medicaps Anthem"], ["09:40", "Invitation of Dignitaries to the Stage"],
-    ["09:45", "Ceremonial Lamp Lighting"], ["09:50", "Saraswati Vandana"], ["09:55", "Addresses by the Esteemed Dignitaries"],
-    ["10:15", "Photo Session"], ["10:25", "National Anthem"] ] },
-  { group: "Main Program", items: [
-    ["10:30", "Speaker Session with Mr. Vikas Ratnawat", "1 hr"], ["11:30", "Panel Discussion", "1 hr"],
-    ["12:30", "Break", "30 min"], ["13:00", "KBC: Knowledge with a Technical Twist", "1 hr"],
-    ["14:00", "Engineers Got Talent: Open Mic", "1 hr"] ] },
+  {
+    group: "Inauguration",
+    items: [
+      ["09:30", "Welcome & Opening"],
+      ["09:35", "Medicaps Anthem"],
+      ["09:40", "Invitation of Dignitaries to the Stage"],
+      ["09:45", "Ceremonial Lamp Lighting"],
+      ["09:50", "Saraswati Vandana"],
+      ["09:55", "Addresses by the Esteemed Dignitaries"],
+      ["10:15", "Photo Session"],
+      ["10:25", "National Anthem"],
+    ],
+  },
+  {
+    group: "Main Program",
+    items: [
+      ["10:30", "Speaker Session with Mr. Vikas Ratnawat", "1 hr"],
+      ["11:30", "Panel Discussion", "1 hr"],
+      ["12:30", "Break", "30 min"],
+      ["13:00", "KBC: Knowledge with a Technical Twist", "1 hr"],
+      ["14:00", "Engineers Got Talent: Open Mic", "1 hr"],
+    ],
+  },
 ];
 
 export const SPEAKER = {
   name: "Vikas Ratnawat",
-  photo: "photos/vikas-ratnawat.jpg", // put the file in public/photos/
+  photo: "photos/vikas-ratnawat.jpg",
   role: "Senior DevOps Associate Consultant, PwC",
   topic: "Cloud, DevOps & the Future of Tech in the Age of AI (to be confirmed)",
   facts: [
@@ -60,7 +75,6 @@ export const PANEL = {
     "How students can prepare to be future-ready engineers",
     "Where technology itself is headed in the age of AI",
   ],
-  // ✏️ Replace "TBA" with real details. Photo = file inside public/photos/ (e.g. "photos/moderator.jpg"), or "" for a placeholder.
   moderator: { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
   panelists: [
     { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
@@ -69,6 +83,5 @@ export const PANEL = {
   ],
 };
 
-// Shared leaderboard: paste your Google Apps Script web-app URL here (see apps-script.gs).
-// Leave "" and the leaderboard works per-device only.
+// Shared leaderboard: paste Google Apps Script web-app URL here.
 export const LEADERBOARD_URL = "https://script.google.com/macros/s/AKfycbyKw44IMGlfUiaI7YrRVfKRoBoP6tn4ZiOoSRVdwjAiLloEw6n8kz2PVJx80K9o6scU/exec";

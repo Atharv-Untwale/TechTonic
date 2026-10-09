@@ -109,3 +109,6 @@ public/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Vite temporary timestamp files
+*.timestamp-*.mjs
