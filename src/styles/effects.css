@@ -1,0 +1,109 @@
+/* Scroll Progress Bar */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 1001;
+  box-shadow: 0 0 10px rgba(240, 185, 43, 0.5);
+}
+
+/* Ambient Canvas Particles */
+.ambient-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* Custom Interactive Cursor Follower */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--gold);
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1.5px solid rgba(240, 185, 43, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
+  will-change: transform;
+  mix-blend-mode: exclusion;
+}
+
+.cursor-ring.is-hover {
+  border-color: var(--gold);
+  background-color: rgba(240, 185, 43, 0.14);
+  box-shadow: 0 0 22px rgba(240, 185, 43, 0.4);
+}
+
+.cursor-ring.is-click {
+  border-color: var(--red);
+  background-color: rgba(226, 84, 44, 0.28);
+  transform: scale(0.85);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* 3D Tilt Card & Specular Glare */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 2;
+  transition: opacity 0.35s ease;
+}
+
+/* Cyber text decoding glyphs */
+.cyber-text {
+  display: inline-block;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.cyber-text:hover {
+  color: var(--gold);
+  text-shadow: 0 0 14px rgba(240, 185, 43, 0.6);
+}
+
+/* Magnetic Button Wrapper */
+.magnetic-wrap {
+  display: inline-block;
+  will-change: transform;
+}
