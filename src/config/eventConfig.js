@@ -1,5 +1,5 @@
 // ✏️ Central Event Configuration: all pages and components read from here.
-export const REGISTER_URL = "https://forms.gle/REPLACE_WITH_YOUR_FORM";
+export const REGISTER_URL = "https://luma.com/758ao8uc";
 export const OPEN_MIC_URL = ""; // Optional separate Engineers Got Talent form; falls back to REGISTER_URL
 
 export const EVENT = {
@@ -45,7 +45,7 @@ export const SCHEDULE = [
 
 export const SPEAKER = {
   name: "Vikas Ratnawat",
-  photo: "photos/vikas-ratnawat.jpg",
+  photo: "/photos/vikas sir handfold.jpeg",
   role: "Senior DevOps Associate Consultant, PwC",
   topic: "Cloud, DevOps & the Future of Tech in the Age of AI (to be confirmed)",
   facts: [
@@ -76,10 +76,10 @@ export const PANEL = {
     "Where technology itself is headed in the age of AI",
   ],
   // ✏️ Replace "TBA" with real details. Photo = file inside public/photos/ (e.g. "photos/moderator.jpg"), or "" for a placeholder.
-  moderator: { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
+  moderator: { name: "Lochan Vaidya", role: "SDE, American Chase", photo: "/photos/lochan-vaidya.jpg" },
   panelists: [
-    { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
-    { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
+    { name: "Vikas Ratnawat", role: "Founder, CloudDevOpsHub", photo: "/photos/vikas sir handfold.jpeg" },
+    { name: "Himanshu Goyal", role: "Founder, Eship Simplified", photo: "" },
     { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
   ],
 };
