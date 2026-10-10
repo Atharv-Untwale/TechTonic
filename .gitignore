@@ -84,7 +84,6 @@ dist
 
 # Gatsby files
 .cache/
-public/
 
 # Serverless Webpack directories
 .serverless/
