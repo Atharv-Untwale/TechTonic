@@ -45,7 +45,7 @@ export const SCHEDULE = [
 
 export const SPEAKER = {
   name: "Vikas Ratnawat",
-  photo: "/photos/vikas sir handfold.jpeg",
+  photo: "/photos/vikas-ratnawat.jpeg",
   role: "Senior DevOps Associate Consultant, PwC",
   topic: "Cloud, DevOps & the Future of Tech in the Age of AI (to be confirmed)",
   facts: [
@@ -78,7 +78,7 @@ export const PANEL = {
   // ✏️ Replace "TBA" with real details. Photo = file inside public/photos/ (e.g. "photos/moderator.jpg"), or "" for a placeholder.
   moderator: { name: "Lochan Vaidya", role: "SDE, American Chase", photo: "/photos/lochan-vaidya.jpg" },
   panelists: [
-    { name: "Vikas Ratnawat", role: "Founder, CloudDevOpsHub", photo: "/photos/vikas sir handfold.jpeg" },
+    { name: "Vikas Ratnawat", role: "Founder, CloudDevOpsHub", photo: "/photos/vikas-ratnawat.jpeg" },
     { name: "Himanshu Goyal", role: "Founder, Eship Simplified", photo: "" },
     { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
   ],
