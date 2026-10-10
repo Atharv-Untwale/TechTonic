@@ -75,6 +75,7 @@ export const PANEL = {
     "How students can prepare to be future-ready engineers",
     "Where technology itself is headed in the age of AI",
   ],
+  // ✏️ Replace "TBA" with real details. Photo = file inside public/photos/ (e.g. "photos/moderator.jpg"), or "" for a placeholder.
   moderator: { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
   panelists: [
     { name: "TBA", role: "Designation, Organization: TBA", photo: "" },
