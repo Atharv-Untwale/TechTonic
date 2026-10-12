@@ -1,15 +1,32 @@
+
 import { memo } from "react";
 
 export default memo(function Footer() {
   return (
     <footer>
-      <p>Organized by Techno Clubs, Medicaps University, Indore · Tech Connects People</p>
       <p>
-        <a href="#/organisers">Meet the Organisers</a> ·{" "}
-        <a href="https://www.medicaps.ac.in" target="_blank" rel="noopener noreferrer">
-          www.medicaps.ac.in
-        </a>
+        Organized by Techno Clubs, Medicaps University, Indore
+        · Tech Connects People
       </p>
+
+      <div className="footer-links">
+        <a
+          href="technoclubs@medicaps.ac.in"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Email
+        </a>
+
+        <a
+          href="https://www.instagram.com/medicaps_technoclubs/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+      </div>
     </footer>
   );
 });
+
