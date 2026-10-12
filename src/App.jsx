@@ -7,13 +7,15 @@ import AmbientCanvas from "@/components/effects/AmbientCanvas.jsx";
 import CursorFollower from "@/components/effects/CursorFollower.jsx";
 import HomePage from "@/pages/HomePage.jsx";
 import PanelPage from "@/pages/PanelPage.jsx";
+import TeamPage from "@/pages/TeamPage.jsx";
 
 export default function App() {
   const hash = useHash();
   const isPanelPage = hash.startsWith("#/panel");
+  const isTeamPage = hash.startsWith("#/organisers") || hash.startsWith("#/team");
 
   useEffect(() => {
-    if (isPanelPage) {
+    if (isPanelPage || isTeamPage) {
       window.scrollTo(0, 0);
       return;
     }
@@ -25,7 +27,7 @@ export default function App() {
         window.scrollTo(0, 0);
       }
     });
-  }, [hash, isPanelPage]);
+  }, [hash, isPanelPage, isTeamPage]);
 
   return (
     <>
@@ -33,7 +35,15 @@ export default function App() {
       <AmbientCanvas />
       <ProgressBar />
       <Navbar />
-      <main id="top">{isPanelPage ? <PanelPage /> : <HomePage />}</main>
+      <main id="top">
+        {isPanelPage ? (
+          <PanelPage />
+        ) : isTeamPage ? (
+          <TeamPage />
+        ) : (
+          <HomePage />
+        )}
+      </main>
       <Footer />
     </>
   );
