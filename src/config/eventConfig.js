@@ -13,7 +13,7 @@ export const EVENT = {
 export const SEGMENTS = [
   { icon: "🎤", title: "Speaker Session", text: "Industry insights on technology, career paths and real-world practice." },
   { icon: "🪑", title: "Panel Discussion", text: "Shaping today's students into the engineers of tomorrow, in an AI-driven era." },
-  { icon: "🎮", title: "KBC: Technical Twist", text: "A fun, high-energy quiz with technical and current-affairs questions." },
+  { icon: "🎮", title: "Technical Tambola", text: "A fun, high-energy quiz with technical and current-affairs questions." },
   { icon: "🎸", title: "Engineers Got Talent", text: "An open-mic for Medicaps students to show talent beyond academics." },
 ];
 
