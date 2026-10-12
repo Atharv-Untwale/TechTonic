@@ -145,39 +145,6 @@
   margin-top: 0.3rem;
 }
 
-/* Filter Bar for Section 2 */
-.team-filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.filter-btn {
-  background: var(--ink2);
-  color: var(--dim);
-  border: 1.5px solid rgba(239, 227, 194, 0.25);
-  padding: 0.35rem 0.8rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-}
-
-.filter-btn:hover {
-  color: var(--cream);
-  border-color: var(--gold);
-}
-
-.filter-btn.active {
-  background: var(--teal);
-  color: var(--ink);
-  border-color: var(--teal);
-  box-shadow: 2px 2px 0 var(--gold);
-  font-weight: 700;
-}
-
 /* ==========================================================================
    SECTION 1: Faculty Members (3 Boxes - Larger Size)
    ========================================================================== */
@@ -279,7 +246,8 @@
 }
 
 /* ==========================================================================
-   SECTION 2: Heads & Executives (21 Boxes - Exact Uniform Compact Size)
+   SECTION 2: Heads & Executives (Uniform Compact Cards)
+   Photo, name and role only (tag and dept pill removed).
    ========================================================================== */
 .exec-grid {
   display: grid;
@@ -325,25 +293,6 @@
   box-shadow: 6px 6px 0 var(--gold);
 }
 
-.exec-card .tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--teal);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 0.72rem;
-  padding: 0.15rem 0.65rem;
-  height: 22px;
-  box-sizing: border-box;
-  margin: 0 auto 0.6rem;
-  transform: rotate(-1.5deg);
-  box-shadow: 2px 2px 0 var(--ink);
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
 .exec-card h3 {
   font: 1.12rem / 1.25 var(--disp);
   color: var(--cream);
@@ -354,37 +303,6 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  flex-shrink: 0;
-}
-
-.exec-card .role {
-  color: var(--dim);
-  font-weight: 500;
-  font-size: 0.86rem;
-  line-height: 1.35;
-  min-height: 2.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0 0 0.6rem;
-  width: 100%;
-}
-
-.exec-card .dept-pill {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 22px;
-  box-sizing: border-box;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--dim);
-  border: 1px dashed rgba(239, 227, 194, 0.3);
-  padding: 0.15rem 0.55rem;
-  background: rgba(20, 21, 26, 0.6);
   flex-shrink: 0;
 }
 
@@ -472,10 +390,6 @@
 
   .exec-card h3 {
     font-size: 0.98rem;
-  }
-
-  .exec-card .role {
-    font-size: 0.78rem;
   }
 }
 

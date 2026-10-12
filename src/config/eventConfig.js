@@ -1,6 +1,6 @@
 // ✏️ Central Event Configuration: all pages and components read from here.
 export const REGISTER_URL = "https://luma.com/758ao8uc";
-export const OPEN_MIC_URL = ""; // Optional separate Engineers Got Talent form; falls back to REGISTER_URL
+export const OPEN_MIC_URL = "https://forms.gle/iWWaJgvAiNtawtpp8"; // Optional separate Engineers Got Talent form; falls back to REGISTER_URL
 
 export const EVENT = {
   name: "TechTonic",

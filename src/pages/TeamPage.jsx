@@ -1,4 +1,4 @@
-import { useState, useMemo, memo } from "react";
+import { memo } from "react";
 import { FACULTY_MEMBERS, CORE_TEAM_MEMBERS } from "@/config/teamConfig.js";
 import { REGISTER_URL } from "@/config/eventConfig.js";
 import CyberText from "@/components/common/CyberText.jsx";
@@ -7,32 +7,6 @@ import Photo from "@/components/common/Photo.jsx";
 import Button from "@/components/common/Button.jsx";
 
 export default memo(function TeamPage() {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const categories = useMemo(() => [
-    { key: "all", label: "All Members", count: CORE_TEAM_MEMBERS.length },
-    { key: "Lead", label: "Leadership", count: CORE_TEAM_MEMBERS.filter(m => m.dept === "Lead").length },
-    { key: "Tech", label: "Tech & Web", count: CORE_TEAM_MEMBERS.filter(m => m.dept === "Tech").length },
-    { key: "Design", label: "Creative & Design", count: CORE_TEAM_MEMBERS.filter(m => m.dept === "Design").length },
-    { key: "Operations", label: "Operations & Mgmt", count: CORE_TEAM_MEMBERS.filter(m => m.dept === "Operations" || m.dept === "Management").length },
-    { key: "PR", label: "PR & Media", count: CORE_TEAM_MEMBERS.filter(m => m.dept === "PR" || m.dept === "Media").length },
-    { key: "Logistics", label: "Logistics & Stage", count: CORE_TEAM_MEMBERS.filter(m => m.dept === "Logistics" || m.dept === "Hospitality").length },
-  ], []);
-
-  const filteredCoreTeam = useMemo(() => {
-    if (activeFilter === "all") return CORE_TEAM_MEMBERS;
-    if (activeFilter === "Operations") {
-      return CORE_TEAM_MEMBERS.filter(m => m.dept === "Operations" || m.dept === "Management");
-    }
-    if (activeFilter === "PR") {
-      return CORE_TEAM_MEMBERS.filter(m => m.dept === "PR" || m.dept === "Media");
-    }
-    if (activeFilter === "Logistics") {
-      return CORE_TEAM_MEMBERS.filter(m => m.dept === "Logistics" || m.dept === "Hospitality");
-    }
-    return CORE_TEAM_MEMBERS.filter(m => m.dept === activeFilter);
-  }, [activeFilter]);
-
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -60,7 +34,7 @@ export default memo(function TeamPage() {
             Faculty Mentors <span className="count">{FACULTY_MEMBERS.length}</span>
           </button>
           <button type="button" onClick={() => scrollTo("executives")} className="team-nav-btn">
-            Heads &amp; Executives <span className="count">{CORE_TEAM_MEMBERS.length}</span>
+            Core &amp; Members <span className="count">{CORE_TEAM_MEMBERS.length}</span>
           </button>
         </nav>
       </header>
@@ -99,13 +73,13 @@ export default memo(function TeamPage() {
         </div>
       </section>
 
-      {/* SECTION 2: HEADS, EXECUTIVES & CORE TEAM (21 Smaller Boxes) */}
+      {/* SECTION 2: HEADS, EXECUTIVES & CORE TEAM (tags and dept pills removed) */}
       <section id="executives" className="team-section exec-section">
         <div className="team-section-header">
           <div>
             <span className="team-section-badge">Section 02 · Organizing Committee</span>
             <h2>
-              <CyberText text="Heads &amp; Executives" />
+              <CyberText text="Core &amp; Members" />
             </h2>
             <p className="team-section-sub">
               Student leaders, department heads, and executives driving operations, design, tech, and outreach.
@@ -113,25 +87,8 @@ export default memo(function TeamPage() {
           </div>
         </div>
 
-        {/* Domain Filter Pills */}
-        <div className="team-filter-bar" role="tablist" aria-label="Filter by department">
-          {categories.map((cat) => (
-            <button
-              key={cat.key}
-              type="button"
-              role="tab"
-              aria-selected={activeFilter === cat.key}
-              className={`filter-btn ${activeFilter === cat.key ? "active" : ""}`}
-              onClick={() => setActiveFilter(cat.key)}
-            >
-              {cat.label} ({cat.count})
-            </button>
-          ))}
-        </div>
-
-        {/* 21 Boxes Grid */}
         <div className="exec-grid">
-          {filteredCoreTeam.map((member) => (
+          {CORE_TEAM_MEMBERS.map((member) => (
             <TiltCard
               as="article"
               key={member.id}
@@ -139,12 +96,9 @@ export default memo(function TeamPage() {
               maxTilt={8}
             >
               <Photo src={member.photo} name={member.name} />
-              <span className="tag">{member.tag}</span>
               <h3>
                 <CyberText text={member.name} />
               </h3>
-              <p className="role">{member.role}</p>
-              {member.dept && <span className="dept-pill">{member.dept}</span>}
             </TiltCard>
           ))}
         </div>
