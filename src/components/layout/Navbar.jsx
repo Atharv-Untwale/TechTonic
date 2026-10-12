@@ -13,6 +13,7 @@ export default memo(function Navbar() {
         <a href="#schedule">Schedule</a>
         <a href="#speaker">Speaker</a>
         <a href="#/panel">Panel</a>
+        <a href="#/organisers">Organisers</a>
         <a href="#play">Play</a>
         <Button>Register</Button>
       </nav>

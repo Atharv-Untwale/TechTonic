@@ -86,3 +86,6 @@ export const PANEL = {
 
 // Shared leaderboard: paste Google Apps Script web-app URL here.
 export const LEADERBOARD_URL = "https://script.google.com/macros/s/AKfycbyKw44IMGlfUiaI7YrRVfKRoBoP6tn4ZiOoSRVdwjAiLloEw6n8kz2PVJx80K9o6scU/exec";
+
+// Team & Organisers
+export { FACULTY_MEMBERS, CORE_TEAM_MEMBERS } from "./teamConfig.js";

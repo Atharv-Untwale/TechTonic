@@ -1,0 +1,488 @@
+/* ==========================================================================
+   Meet The Team / Organisers Page Styles - TechTonic 2026
+   ========================================================================== */
+
+.team-page {
+  padding-bottom: 5rem;
+}
+
+/* Page Header & Intro */
+.team-head {
+  padding: 3.5rem 5vw 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-head .back {
+  margin-bottom: 1.5rem;
+}
+
+.team-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.team-head h1 {
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  line-height: 1.05;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.team-lead {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--dim);
+  max-width: 780px;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Quick Navigation Anchor Bar */
+.team-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 2rem 0 1rem;
+  padding: 1rem 1.4rem;
+  background: var(--ink2);
+  border: 2px solid rgba(239, 227, 194, 0.2);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+  align-items: center;
+}
+
+.team-nav-bar .label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 0.5rem;
+}
+
+.team-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--ink);
+  color: var(--cream);
+  border: 2px solid var(--cream);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 0 var(--red);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+}
+
+.team-nav-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--gold);
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.team-nav-btn .count {
+  background: var(--red);
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.team-nav-btn:hover .count {
+  background: var(--ink);
+  color: var(--gold);
+}
+
+/* Sections General */
+.team-section {
+  padding: 3rem 5vw;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.team-section-header {
+  margin-bottom: 2.2rem;
+  border-bottom: 3px solid rgba(239, 227, 194, 0.15);
+  padding-bottom: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.team-section-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.7rem;
+  background: var(--red);
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.team-section-badge.gold {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.team-section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--cream);
+}
+
+.team-section-sub {
+  color: var(--dim);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+/* Filter Bar for Section 2 */
+.team-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: var(--ink2);
+  color: var(--dim);
+  border: 1.5px solid rgba(239, 227, 194, 0.25);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.filter-btn:hover {
+  color: var(--cream);
+  border-color: var(--gold);
+}
+
+.filter-btn.active {
+  background: var(--teal);
+  color: var(--ink);
+  border-color: var(--teal);
+  box-shadow: 2px 2px 0 var(--gold);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   SECTION 1: Faculty Members (3 Boxes - Larger Size)
+   ========================================================================== */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.faculty-card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: var(--ink2);
+  border: 3.5px solid var(--cream);
+  box-shadow: 9px 9px 0 var(--gold);
+  padding: 2.2rem 1.6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s;
+}
+
+.faculty-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 13px 13px 0 var(--red);
+}
+
+/* Faculty Photo Container - Distinctly Larger */
+.faculty-card .photo {
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 4/5;
+  margin: 0 auto 1.4rem;
+  border: 3.5px solid var(--cream);
+  box-shadow: 7px 7px 0 var(--red);
+  background: #111216;
+  flex-shrink: 0;
+}
+
+.faculty-card:hover .photo {
+  box-shadow: 9px 9px 0 var(--gold);
+}
+
+.faculty-card .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.85rem;
+  height: 26px;
+  box-sizing: border-box;
+  margin: 0 auto 0.75rem;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 var(--ink);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.faculty-card h3 {
+  font: 1.45rem / 1.25 var(--disp);
+  color: var(--cream);
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.4rem;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.faculty-card .role {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.05rem;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.35rem;
+  width: 100%;
+}
+
+.faculty-card .dept {
+  color: var(--dim);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   SECTION 2: Heads & Executives (21 Boxes - Exact Uniform Compact Size)
+   ========================================================================== */
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.6rem 1.4rem;
+  align-items: stretch;
+}
+
+.exec-card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: var(--ink2);
+  border: 2px solid var(--cream);
+  box-shadow: 5px 5px 0 var(--red);
+  padding: 1.25rem 1rem 1.15rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s;
+}
+
+.exec-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--gold);
+}
+
+/* Heads/Executives Photo Container - Exact Uniform Sizing across all cards */
+.exec-card .photo {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 4/5;
+  margin: 0 auto 0.95rem;
+  border: 2.5px solid var(--cream);
+  box-shadow: 4px 4px 0 var(--teal);
+  background: #111216;
+  flex-shrink: 0;
+}
+
+.exec-card:hover .photo {
+  box-shadow: 6px 6px 0 var(--gold);
+}
+
+.exec-card .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.65rem;
+  height: 22px;
+  box-sizing: border-box;
+  margin: 0 auto 0.6rem;
+  transform: rotate(-1.5deg);
+  box-shadow: 2px 2px 0 var(--ink);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.exec-card h3 {
+  font: 1.12rem / 1.25 var(--disp);
+  color: var(--cream);
+  margin: 0 0 0.35rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.exec-card .role {
+  color: var(--dim);
+  font-weight: 500;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 0.6rem;
+  width: 100%;
+}
+
+.exec-card .dept-pill {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  box-sizing: border-box;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  border: 1px dashed rgba(239, 227, 194, 0.3);
+  padding: 0.15rem 0.55rem;
+  background: rgba(20, 21, 26, 0.6);
+  flex-shrink: 0;
+}
+
+/* Photo Placeholder Extras */
+.photo .ph-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 38%, rgba(78, 143, 148, 0.22) 0%, rgba(20, 21, 26, 0.8) 75%);
+  user-select: none;
+}
+
+.photo .ph-badge {
+  font-family: var(--body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  background: rgba(20, 21, 26, 0.85);
+  border: 1px dashed rgba(239, 227, 194, 0.35);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* Call to action footer banner on Team Page */
+.team-cta {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: var(--ink2);
+  border: 3px solid var(--gold);
+  box-shadow: 8px 8px 0 var(--red);
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-cta h3 {
+  font: 2rem / 1.2 var(--disp);
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.team-cta p {
+  color: var(--cream);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+}
+
+.team-cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .faculty-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+
+  .exec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem 0.85rem;
+  }
+
+  .exec-card {
+    padding: 1rem 0.7rem;
+  }
+
+  .exec-card h3 {
+    font-size: 0.98rem;
+  }
+
+  .exec-card .role {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .exec-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
