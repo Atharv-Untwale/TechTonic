@@ -22,6 +22,12 @@ export const FACULTY_MEMBERS = [
   },
   {
     id: "fac-3",
+    name: "Prof. Hemant Pal",
+    role: "Co- Convenor",
+    photo: "/photos/hemant-pal (1).webp", // e.g. "/photos/mentor.jpg"
+  },
+  {
+    id: "fac-4",
     name: "Prof. Shivani Patnaha",
     role: "Co- Convenor",
     photo: "/photos/shivanipatnaha.webp", // e.g. "/photos/mentor.jpg"
@@ -35,7 +41,7 @@ export const CORE_TEAM_MEMBERS = [
   { id: "core-4", name: "Anushka Sharma", photo: "/photos/anushkasharma.png" },
   { id: "core-5", name: "Tanishka Agrawal", photo: "" },
   { id: "core-6", name: "Drashti Singh", photo: "/photos/drashtisingh.png" },
-  { id: "core-7", name: "Anurag Tiwari", photo: "" },
+  { id: "core-7", name: "Anurag Tiwari", photo: "/photos/anuragtiwari.png" },
   { id: "core-8", name: "Tarang Choure", photo: "/photos/tarangchoure.jpg" },
   { id: "core-9", name: "Pawni Majawadia", photo: "/photos/pawni.png" },
   { id: "core-10", name: "Ayush Jaiswal", photo: "/photos/ayushjaiswal.jpeg" },

@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Mobile responsiveness for TechTonic. Loaded LAST in index.css so it can
+   override the desktop rules without touching the other stylesheets.
+   ========================================================================== */
+
+/* ---------- Base safety net (all sizes) ---------- */
+html {
+  scroll-padding-top: 72px; /* sticky navbar height, so #section links don't hide titles */
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip; /* no sideways scroll; "clip" (unlike "hidden") keeps the sticky navbar working */
+}
+
+img,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The hero title is ~8.5em wide, so the old clamp(3rem, 13vw, 9rem) overflowed
+   on every screen under ~1100px. This scales with the viewport instead. */
+.hero h1 {
+  font-size: clamp(1.7rem, 9.8vw, 9rem);
+}
+
+.page-head h1,
+.team-head h1 {
+  font-size: clamp(1.6rem, 7vw, 4.8rem);
+  overflow-wrap: anywhere;
+}
+
+/* Hamburger button is hidden on desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* ---------- Tablet and phone: navbar becomes a hamburger menu ---------- */
+@media (max-width: 860px) {
+  .nav {
+    padding: 0.6rem 5vw;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0 10px;
+    background: transparent;
+    border: 2px solid var(--cream);
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    height: 2px;
+    background: var(--cream);
+    transition: transform 0.25s, opacity 0.2s;
+  }
+
+  .nav-toggle[aria-expanded="true"] {
+    border-color: var(--gold);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.4rem 5vw 1.2rem;
+    background: rgba(20, 21, 26, 0.98);
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.45);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+  }
+
+  .nav nav.open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .nav nav a:not(.btn) {
+    padding: 0.95rem 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(239, 227, 194, 0.12);
+  }
+
+  .nav nav a:not(.btn)::after {
+    display: none;
+  }
+
+  .nav nav .magnetic-wrap {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .nav nav .btn {
+    display: block;
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
+
+  .play-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 720px) {
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .sec {
+    padding: 3rem 5vw;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2.5rem 5vw 2.5rem;
+  }
+
+  .hero h1 {
+    text-shadow: 3px 3px 0 var(--red), 5px 5px 0 var(--ink);
+  }
+
+  .band {
+    padding: 0.35rem 0.9rem;
+    max-width: 100%;
+  }
+
+  .countdown {
+    gap: 0.5rem;
+  }
+
+  .countdown div {
+    min-width: 0;
+    flex: 1;
+    max-width: 4.8rem;
+    padding: 0.4rem 0.2rem;
+    box-shadow: 3px 3px 0 var(--teal);
+  }
+
+  .countdown b {
+    font-size: 1.45rem;
+  }
+
+  .marquee {
+    font-size: 0.95rem;
+    margin: 1rem -4vw;
+  }
+
+  /* Speaker */
+  .speaker,
+  .speaker.has-photo {
+    padding: 1.2rem;
+    gap: 1.4rem;
+  }
+
+  .speaker h3 {
+    font-size: 1.5rem;
+  }
+
+  .facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .facts b {
+    font-size: 1.7rem;
+  }
+
+  /* Schedule */
+  .timeline li {
+    grid-template-columns: 3.6rem 1fr;
+    gap: 0.2rem 0.6rem;
+    padding: 0.7rem 0 0.7rem 0.8rem;
+  }
+
+  .timeline li:hover {
+    padding-left: 0.8rem;
+  }
+
+  .timeline time {
+    font-size: 0.95rem;
+  }
+
+  .timeline em {
+    grid-column: 2;
+    font-size: 0.85rem;
+  }
+
+  .tabs button {
+    flex: 1;
+    padding: 0.55rem 0.6rem;
+  }
+
+  /* Panel / people */
+  .page-head {
+    padding: 2.5rem 5vw 0.5rem;
+  }
+
+  .topic-box {
+    font-size: 1.15rem;
+  }
+
+  .people {
+    gap: 1.6rem;
+    max-width: 300px;
+    margin-inline: auto;
+  }
+
+  .mod-row,
+  .sec.alt > .mod-row {
+    max-width: 240px;
+  }
+
+  /* Game */
+  .crt,
+  .crt.good,
+  .crt.bad {
+    padding: 0.7rem;
+  }
+
+  .crt {
+    box-shadow: 4px 4px 0 var(--red);
+  }
+
+  .crt.good {
+    box-shadow: 4px 4px 0 #2f9d5f;
+  }
+
+  .crt.bad {
+    box-shadow: 4px 4px 0 #fff;
+  }
+
+  .arena {
+    height: 340px;
+  }
+
+  .overlay {
+    justify-content: center;
+    justify-content: safe center; /* never clip the top when content is taller than the arena */
+    overflow-y: auto;
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .overlay h3 {
+    font-size: 1.7rem;
+  }
+
+  .overlay p,
+  .overlay ul {
+    font-size: 0.88rem;
+  }
+
+  .overlay .big {
+    font-size: 3rem;
+  }
+
+  .hud {
+    font-size: 0.85rem;
+  }
+
+  .hud b {
+    font-size: 1.15rem;
+  }
+
+  .tgt {
+    width: 56px;
+    height: 56px;
+  }
+
+  .namebox input {
+    width: 100%;
+  }
+
+  .board {
+    padding: 0.9rem;
+  }
+
+  /* Team page */
+  .team-head {
+    padding: 2.5rem 5vw 1rem;
+  }
+
+  .team-nav-bar {
+    padding: 0.8rem;
+  }
+
+  .team-section {
+    padding: 2rem 5vw;
+  }
+
+  .team-cta {
+    padding: 2rem 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .team-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    padding: 2rem 5vw;
+  }
+}
+
+/* ---------- Small phones: full-width stacked buttons ---------- */
+@media (max-width: 480px) {
+  .hero-row,
+  .row,
+  .team-cta-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-row .magnetic-wrap,
+  .row .magnetic-wrap,
+  .team-cta-btns .magnetic-wrap {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-row .btn,
+  .row .btn,
+  .team-cta-btns .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .arena {
+    height: 320px;
+  }
+}
+
+/* ---------- Touch devices: stop "stuck hover" after a tap ---------- */
+@media (hover: none) {
+  .seg:nth-child(odd):hover {
+    transform: rotate(-0.6deg);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    border-color: var(--cream);
+  }
+
+  .seg:nth-child(even):hover {
+    transform: rotate(0.6deg);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    border-color: var(--cream);
+  }
+
+  .photo:hover {
+    transform: none;
+    box-shadow: 6px 6px 0 var(--red);
+  }
+
+  .photo:hover img {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--red);
+  }
+
+  .btn.ghost:hover {
+    box-shadow: 4px 4px 0 var(--teal);
+  }
+
+  .btn:hover::after {
+    transform: translateX(-100%);
+  }
+
+  .board:hover,
+  .speaker:hover {
+    transform: none;
+  }
+
+  .ambient-canvas {
+    opacity: 0.45;
+  }
+}

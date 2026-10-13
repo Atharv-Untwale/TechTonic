@@ -11,7 +11,7 @@ export default memo(function Footer() {
 
       <div className="footer-links">
         <a
-          href="technoclubs@medicaps.ac.in"
+          href="mailto:technoclubs@medicaps.ac.in"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -37,8 +37,8 @@ export const SCHEDULE = [
       ["10:30", "Speaker Session with Mr. Vikas Ratnawat", "1 hr"],
       ["11:30", "Panel Discussion", "1 hr"],
       ["12:30", "Break", "30 min"],
-      ["13:00", "KBC: Knowledge with a Technical Twist", "1 hr"],
-      ["14:00", "Engineers Got Talent: Open Mic", "1 hr"],
+      ["13:00", "Technical Tambola", "1.5 hr"],
+      ["15:30", "Engineers Got Talent: Open Mic", "1 hr"],
     ],
   },
 ];

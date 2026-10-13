@@ -4,3 +4,4 @@
 @import "./effects.css";
 @import "./sections.css";
 @import "./team.css";
+@import "./responsive.css"; /* keep LAST so it can override the rules above on small screens */
